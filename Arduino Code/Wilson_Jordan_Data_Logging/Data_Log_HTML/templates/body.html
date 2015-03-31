@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Temp Log</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="static/bootstrap.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="static/styles.css" rel="stylesheet">
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="static/Chart.js"></script>
+    <script type="text/javascript">
+    	
+    	
+    	// $.getJSON( "static/stream.json", function( json ) {
+//     	for(i=0; i < json.length; i++){
+//     		var temps = [];
+//     		var times = [];
+//     		var info = [];
+//     		temps.push(json[ i ].temp);
+//     		times.push(json[ i ].timestamp);
+//     		info.push(parseInt(temps), parseInt(times));
+//   			console.log(json[ i ].temp);
+//   			console.log(json[ i ].timestamp );
+//   			
+//   			}
+//   			
+//  		});
+ 		
+		
+	var json = '';
+
+
+	json = new XMLHttpRequest();
+
+
+	json.open('GET', 'static/stream.json');
+
+	json.onreadystatechange = function() {
+		if ((json.status === 200)&&(json.readyState === 4)) {
+
+		var data = JSON.parse(json.responseText);
+			var lineChartData = {
+                labels: [],
+                datasets: [
+                    {
+                    label: "Temp Over Time",
+ 					fillColor : "rgba(151,187,205,0.2)",
+ 					strokeColor : "rgba(151,187,205,1)",
+ 					pointColor : "rgba(151,187,205,1)",
+ 					pointStrokeColor : "#fff",
+ 					pointHighlightFill : "#fff",
+ 					pointHighlightStroke : "rgba(151,187,205,1)",
+ 					data : []
+                    }
+                ]
+            }        
+        
+			for (var i = 0; i < data.length; i++) {
+				lineChartData.labels.push(data[i].timestamp);    
+                lineChartData.datasets[0].data.push(data[i].temp); 
+			}
+			//console.log(lineChartData);
+			
+            var ctx = $("#canvas").get(0).getContext("2d");
+        
+			window.myLine = new Chart(ctx).Line(lineChartData, {
+                responsive: true  
+            });
+			
+	}
+} 
+json.send();
+		
+      
+    </script>
+	</head>
+	<body>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="navbar-header">
+	</div>
+</nav>
+<h1>Temp Log</h1>
+
+<div class="well">
+<p>Temperatures over 24 hours.</p>
+</div>
+
+<div class="container-fluid">
+  
+  <!--center-->
+  <div class="col-sm-6">
+    <div class="row">
+      <div class="col-xs-12">
+      
+      <canvas id="canvas" height="450" width="600"></canvas>
+      
+      
+</div>
+    </div>
+
+</div><!--/container-fluid-->
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="static/bootstrap.min.js"></script>
+	</body>
+</html>
