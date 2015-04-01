@@ -1,0 +1,45 @@
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery-2.0.3.min.js"></script>
+
+<script type="text/javascript" src="script.js"></script>
+
+</script>
+
+</head>
+
+<body>
+
+<div class="mainContainer">
+
+<div class="buttonBlock"><span class="buttonTitle">Prime LED Pins</span>
+        <button class="ledButton" type="button" id="7" onClick="pinPrime(this.id)">Prime LED 1</button>
+        <button class="ledButton" type="button" id="8" onClick="pinPrime(this.id)">Prime LED 2</button>
+
+</div>
+
+<div class="buttonBlock"><span class="buttonTitle">LED 1</span>
+        <button class="ledButton" type="button" id="1" onClick="buttonClick(this.id)">On</button>
+        <button class="ledButton" type="button" id="2" onClick="buttonClick(this.id)">Off</button>
+
+</div>
+
+<div class="buttonBlock"><span class="buttonTitle">LED 2</span>
+   
+    <button class="ledButton" type="button" id="3" onClick="buttonClick(this.id)">On</button>
+    <button class="ledButton" type="button" id="4" onClick="buttonClick(this.id)">Off</button>
+   
+</div>
+
+<form method="post" action="">
+      <label class="buttonTitle" for="points">LED 3</label>
+      <input type="range" name="points" id="points" value="0" min="0" max="200" onchange="Slider(this.value)">
+    </form>
+
+</div>
+</body>
