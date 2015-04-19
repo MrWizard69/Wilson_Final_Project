@@ -22,7 +22,7 @@ int sensorHigh = 0;
 void setup() {
   Serial.begin(9600);
 
-  // calibrate for the first five seconds after program runs
+// calibrate for the first five seconds after program runs
   while (millis() < 5000) {
     // record the maximum sensor value
     
@@ -35,9 +35,9 @@ void setup() {
       sensorLow = sensorValue;
     }
   }
-  // turn the LED off, signaling the end of the calibration period
-  //digitalWrite(ledPin, LOW);
-  Serial.println("done");
+
+  Serial.println("Done Checking Lights...");
+  delay(2000);
 }
 
 void loop() {
