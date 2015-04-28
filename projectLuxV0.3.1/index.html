@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lux</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript" src="script.js"></script>
+<!--<link href="style.css" rel="stylesheet" type="text/css" />-->
+</head>
+
+<body>
+
+<!-- Start of first page -->
+<div data-role="page" id="welcome">
+
+	<div data-role="header">
+		<h1>Welcome Page</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>This will be the welcome page.</p>
+		<p>Click here to view the <a href="#regi">Register Page</a></p>
+		<a href="#login">Login Page</a><br/>
+		<input type="button" name="logout" id="logout" value="Logout" />
+		
+		
+		
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
+
+<!-- Start of second page -->
+<div data-role="page" id="regi">
+
+	<div data-role="header">
+		<h1>Register Page</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>This will be the register page.</p>
+		<p>Click here to view the <a href="#login">Login Page</a></p>
+		<a href="#welcome">Welcome Page</a>
+		
+		<lable>Username</lable>
+		<input type="text" name="username" id="username" class="text" maxlength="30" />
+		<br />
+		<lable>Product ID</lable>
+		<input type="text" name="prodid" id="prodid" class="text" maxlength="4" />
+		<br />
+		<lable>Password</lable>
+		<input type="password" name="password" id="password" class="text" maxlength="30" />
+		<br />
+		<input type="submit" name="regiBtn" id="regiBtn" value="Submit" />
+		
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
+
+<!-- Start of third page -->
+<div data-role="page" id="login">
+
+	<div data-role="header">
+		<h1>Login Page</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>This will be the login page.</p>
+		<p>Click here to go to the <a href="#rooms">Rooms Page</a></p>
+		<a href="#welcome">Welcome Page</a>
+		
+		<lable>Username</lable>
+		<input type="text" name="loguser" id="loguser" class="text" maxlength="30" />
+		<br />
+		<lable>Password</lable>
+		<input type="password" name="pass" id="pass" class="text" maxlength="30" />
+		<br />
+		<input type="submit" name="logBtn" id="logBtn" value="Submit" />
+		
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
+
+<!-- Start of fourth page -->
+<div data-role="page" id="rooms">
+
+	<div data-role="header">
+		<h1>Rooms Page</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>This will be the page where you can add new rooms and lights.</p>
+		
+		<div class="buttonBlock"><span class="buttonTitle">LED 1</span>
+        	<button class="ledButton1" id="lamp"lamp="1" type="button" pin-id="7" state="0">Off</button>
+        
+		</div>
+		
+		<p>Click here to go back to the <a href="#welcome">Welcome Page</a></p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+</body>
