@@ -1,0 +1,65 @@
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery-2.0.3.min.js"></script>
+
+<script type="text/javascript" src="script.js"></script>
+
+</script>
+
+</head>
+
+<body>
+
+<div class="mainContainer">
+
+<div class="buttonBlock"><span class="buttonTitle">Prime LED Pins</span>
+        <button class="ledButton" type="button" lit-id="7" state="o">Prime LED 1</button>
+        <button class="ledButton" type="button" lit-id="8" state="o">Prime LED 2</button>
+        <button class="ledButton" type="button" lit-id="9" state="o">Prime LED 3</button>
+
+</div>
+
+<div class="buttonBlock"><span class="buttonTitle">LED 1</span>
+        <button class="ledButton1" id="lamp"lamp="1" type="button" pin-id="7" state="0">Off</button>
+        
+</div>
+
+<div class="buttonBlock"><span class="buttonTitle">LED 2</span>
+   
+    <button class="ledButton1" lamp="nope" type="button" pin-id="8" state="0">Off</button>
+   
+</div>
+
+<div class="buttonBlock"><span class="buttonTitle">LED 3</span>
+   
+    <button class="ledButton1" id="dim" lamp="nope" type="button" pin-id="9" state="0">Off</button>
+   
+</div>
+
+<form method="post" action="">
+      <label class="buttonTitle" for="points">LED 3</label>
+      <input type="range" name="points" id="points1" value="0" min="0" max="200" onchange="Slider(this.value)">
+    </form>
+
+</div>
+
+<div class="buttonBlock"><span class="buttonTitle">Motion Detection</span>
+   
+    <button class="motion" type="button" pin-id="5" state="0">Off</button>
+   
+</div>
+
+<div class="buttonBlock"><span class="buttonTitle">Light Detection(Power Saver)</span>
+   
+    <button class="light" type="button" pin-id="A0" state="0">Off</button>
+   
+</div>
+
+<div id="hours"></div><div id="minutes"></div>
+
+</body>
