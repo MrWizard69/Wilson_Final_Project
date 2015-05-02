@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Project Lux</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript" src="script.js"></script>
+<!--<link href="style.css" rel="stylesheet" type="text/css" />-->
+</head>
+
+<body>
+
+<!-- Start of first page -->
+<div data-role="page" id="welcome">
+
+	<div data-role="header">
+		<h1>Welcome Page</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>This will be the welcome page.</p>
+		
+		<input type="button" name="regi" class="regi" value="Register Page" />
+		<input type="button" name="log" class="log" value="Login Page" />
+
+		
+		
+		
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
+
+<!-- Start of second page -->
+<div data-role="page" id="regi">
+
+	<div data-role="header">
+		<h1>Register Page</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>This will be the register page.</p>
+		<input type="button" name="log" class="log" value="Login Page" />
+		<input type="button" name="welc" class="welc" value="Welcome Page" />
+		
+		<lable>Username</lable>
+		<input type="text" name="username" id="username" class="text" maxlength="30" />
+		<br />
+		<lable>Product ID</lable>
+		<input type="text" name="prodid" id="prodid" class="text" maxlength="4" />
+		<br />
+		<lable>Password</lable>
+		<input type="password" name="password" id="password" class="text" maxlength="30" />
+		<br />
+		<input type="submit" name="regiBtn" id="regiBtn" value="Submit" />
+		
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
+
+<!-- Start of third page -->
+<div data-role="page" id="login">
+
+	<div data-role="header">
+		<h1>Login Page</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>This will be the login page.</p>
+		<input type="button" name="rpg" class="rpg" value="Rooms Page" />
+		<input type="button" name="welc" class="welc" value="Welcome Page" />
+		<br />
+		<lable>Username</lable>
+		<input type="text" name="loguser" id="loguser" class="text" maxlength="30" />
+		<br />
+		<lable>Password</lable>
+		<input type="password" name="pass" id="pass" class="text" maxlength="30" />
+		<br />
+		<input type="submit" name="logBtn" id="logBtn" value="Submit" />
+		
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
+<!-- Start of fourth page -->
+<div data-role="page" id="rooms">
+
+	<div data-role="header">
+		<h1>Rooms Page</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		
+		<input type="button" name="welc" class="welc" value="Welcome Page" />
+		<input type="button" name="logout" class="logout" value="Logout" />
+		
+		<p>This will be the page where you can add new rooms and lights.</p>
+		<div id="lroom"><h3>Living Room Light</h3></div>
+		<button class="ledButton" type="button" id="setRoom1" lit-id="7" state="o">Set Living Room</button>
+		<button class="ledButton1" id="lit1" id="lamp"lamp="1" type="button" pin-id="7" state="0">Off</button>
+		
+		<div id="broom"><h3>Bedroom Light</h3></div>
+        <button class="ledButton" type="button" id="setRoom2" lit-id="8" state="o">Set Bedroom</button>
+        <button class="ledButton1" id="lit2" lamp="nope" type="button" pin-id="8" state="0">Off</button>
+        
+        <div id="droom"><h3>Dining Room Light</h3></div>
+        <button class="ledButton" type="button" id="setRoom3" lit-id="9" state="o">Set Dining Room</button>
+		<button class="ledButton1" id="lit3" id="dim" lamp="nope" type="button" pin-id="9" state="0">Off</button>
+		<button id="dright">Set Brightness</button>
+	
+		
+		
+		
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
+<!-- Start of fifth page -->
+<div data-role="page" id="bright">
+
+	<div data-role="header">
+		<h1>Dining Dim</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		
+		<input type="button" name="logout" class="logout" value="Logout" />
+		
+		<p>This will be the page where you can change the brightness of light 3.</p>
+		
+		
+        	<input type="range" name="points" id="points1" value="0" min="0" max="200" onchange="Slider(this.value)">
+        
+		
+		<input type="button" name="bck" class="bck" value="Back" />
+		
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
+</body>
