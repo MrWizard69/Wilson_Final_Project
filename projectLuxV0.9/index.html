@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Project Lux</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script type="text/javascript" src="jquery-2.0.3.min.js"></script>
+<!--<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
+<script type="text/javascript" src="jquery.mobile-1.4.5.js"></script>
+<script type="text/javascript" src="script.js"></script>
+<link href="jquery.mobile-1.4.5.css" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<!-- Start of first page -->
+<div data-role="page" id="welcome">
+
+	<div data-role="header">
+		<h1 id="ltitle">Welcome to Project Lux</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		
+		<img id="logo" src="img/LuxLogoV1.1.png" />
+		
+		<button class="regi" id="welcregi">Register</button>
+		<button class="log" id="welclog">Login</button>
+
+	<div data-role="tabs" id="tabs">
+  <div data-role="navbar">
+
+    <ul>
+      <li><a href="#one" data-ajax="false">What Is It?</a></li>
+      <li><a href="#two" data-ajax="false">Contact Us</a></li>
+    </ul>
+
+  </div>
+  
+  <div id="one" class="ui-body-d ui-content" data-role="listview" data-inset="true">
+    <p>Project Lux is the new way to take control of your home. With this web app, you never have
+    	to wonder if you turned out that light. Now you can see if the lights are on and if they need replacing.
+    	save power by only using the lights when you are in the room or if the room becomes too dark.
+    	With project Lux and this web app, your home is now with you where ever you go.</p>
+  </div>
+  <div id="two" class="ui-body-d ui-content" data-role="listview" data-inset="true">
+        <p>Having a problem with the app? Did something break? Is something now functioning properly? No
+        	problem is too small! Give is a call anytime at 1-800-879-2723.</p>
+  </div>
+</div>
+		
+		
+	</div><!-- /content -->
+
+	<!-- 
+<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div>
+ --><!-- /footer -->
+</div><!-- /page -->
+
+
+
+<!-- Start of second page -->
+<div data-role="page" id="regi">
+
+	<div data-role="header">
+		<a href="#welcome" class="prolux">Project Lux</a>
+		<h1>Register</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>Register your new hub.</p>
+		<button class="log" id="regilog">Login</button>
+		<br />
+		<br />
+		<div><h4 id="regiErr">The hub key dosen't match...</h4></div>
+		<div id="logcont">
+		<br />
+		<lable>Username</lable>
+		<input type="text" name="username" id="username" class="text" maxlength="10" />
+		<br />
+		<lable>Hub Key</lable>
+		<input type="text" name="prodid" id="prodid" class="text" maxlength="8" />
+		<br />
+		<lable>Password</lable>
+		<input type="password" name="password" id="password" class="text" maxlength="8" />
+		<br />
+		
+		<button id="regiBtn">Submit</button>
+		</div>
+		
+	</div><!-- /content -->
+
+	<!-- 
+<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div>
+ --><!-- /footer -->
+</div><!-- /page -->
+
+
+
+<!-- Start of third page -->
+<div data-role="page" id="login">
+
+	<div data-role="header">
+		<a href="#welcome" class="prolux">Project Lux</a>
+		<h1>Login</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>Login to your smart home.</p>
+		
+		<!-- <input type="button" name="welc" class="welc" value="Welcome Page" /> -->
+		<!-- <input type="button" name="regi" class="regi" value="Register Page" /> -->
+		<!-- <input type="button" name="rpg" class="rpg" value="Rooms Page" /> -->
+		<button class="regi" id="logregi">Register</button>
+		<button class="rpg" id="roomP">Your Home</button>
+		<br />
+		<div><h4 id="logErr">Username or password is incorrect...</h4></div>
+		<div><h4 id="regitrue">You successfully registered your hub </h4></div>
+		<div id="logcont">
+		<br />
+		<lable>Username</lable>
+		<input type="text" name="loguser" id="loguser" class="text" maxlength="10" />
+		<br />
+		<lable>Password</lable>
+		<input type="password" name="pass" id="pass" class="text" maxlength="8" />
+		<br />
+		<!-- <input type="submit" name="logBtn" id="logBtn" value="Submit" /> -->
+		<button id="logBtn">Submit</button>
+		</div>
+		
+		
+	</div><!-- /content -->
+
+	<!-- 
+<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div>
+ --><!-- /footer -->
+</div><!-- /page -->
+
+
+<!-- Start of fourth page -->
+<div data-role="page" id="rooms">
+
+	<div data-role="header">
+		<a href="#welcome" class="prolux">Project Lux</a>
+		<h1>Your Home</h1>
+		<button class="logout" id="roomsout">Logout</button>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		
+		
+		<p class="pbreak">View your rooms or setup some new lights.</p>
+		<div id="roomcont">
+		<!--<div id="broom"><h3>Bedroom Light</h3></div>-->
+        <button class="ledButton" type="button" id="setRoom2" lit-id="8" state="o">Set Bedroom</button>
+        <button id="bedroom">Bedroom ></button>
+		
+		
+		
+		<!--<div id="lroom"><h3>Living Room Light</h3></div>-->
+		<button class="ledButton" type="button" id="setRoom1" lit-id="7" state="o">Set Living Room</button>
+		<button id="livroom">Living Room ></button>
+        
+
+        
+        <!--<div id="droom"><h3>Dining Room Light</h3></div>-->
+        <button class="ledButton" type="button" id="setRoom3" lit-id="9" state="o">Set Dining Room</button>
+        <button id="dineroom">Dining Room ></button>
+		
+	
+		
+		</div>
+	</div><!-- /content -->
+
+	<!-- 
+<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div>
+ --><!-- /footer -->
+</div><!-- /page -->
+
+
+<!-- Start of fifth page -->
+<div data-role="page" id="bright">
+
+	<div data-role="header">
+		<a href="#welcome" class="prolux">Project Lux</a>
+		<h1>Alter Dining Room</h1>
+		<button class="logout" id="roomsout">Logout</button>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		
+		
+		<p class="pbreak">Change the brightness of the Dining Room.</p>
+			
+		
+        	<input type="range" name="points" id="points1" value="0" min="0" max="200" onchange="Slider(this.value)">
+        
+		
+		<input type="button" name="bck" id="dBck" value="< Back" />
+		
+	</div><!-- /content -->
+
+	<!-- 
+<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div>
+ --><!-- /footer -->
+</div><!-- /page -->
+
+
+<!-- Start of sixth page -->
+<div data-role="page" id="livroomlight">
+
+	<div data-role="header">
+		<a href="#welcome" class="prolux">Project Lux</a>
+		<h1>Living Room</h1>
+		<button class="logout" id="roomsout">Logout</button>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		
+		
+		<p class="pbreak">Here you can make changes to the living room.</p>
+		<div id="livecont">
+		<button class="ledButton1" id="lit2" lamp="nope" type="button" pin-id="8" state="0">Light Off</button>
+		<button id="litb" class="light" type="button" pin-id="A0" l-id="8" state="0">Power Saver Off</button>
+        
+		
+		<!-- <input type="button" name="bck" id="bk" class="bck" value="< Back" /> -->
+		<button id="back1" class="bck">< Back</button>
+		</div>
+	</div><!-- /content -->
+
+	<!-- 
+<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div>
+ --><!-- /footer -->
+</div><!-- /page -->
+
+
+<!-- Start of sixth page -->
+<div data-role="page" id="bedroomlight">
+
+	<div data-role="header">
+		<a href="#welcome" class="prolux">Project Lux</a>
+		<h1>Bedroom</h1>
+		<button class="logout" id="roomsout">Logout</button>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		
+		
+		<p class="pbreak">Here you can make changes to the Bedroom</p>
+		<div id="livecont">
+		<button class="ledButton1" id="lamp" lamp="1" type="button" pin-id="7" state="0">Light Off</button>
+        <button id="motionb" class="motion" lamp="1" type="button" pin-id="5" l-id="7" state="0">Motion Detection Off</button>
+        
+		
+		<!-- <input type="button" name="bck" class="bck" value="< Back" /> -->
+		<button id="back2" class="bck">< Back</button>
+		</div>
+	</div><!-- /content -->
+
+	<!-- 
+<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div>
+ --><!-- /footer -->
+</div><!-- /page -->
+
+
+<!-- Start of seventh page -->
+<div data-role="page" id="dinroomlight">
+
+	<div data-role="header">
+		<a href="#welcome" class="prolux">Project Lux</a>
+		<h1>Dining Room</h1>
+		<button class="logout" id="roomsout">Logout</button>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		
+		
+		<p class="pbreak">Here you can make changes to the Dining Room</p>
+		
+		<div id="livecont">
+        <button class="ledButton1" id="dim" lamp="nope" type="button" pin-id="9" state="0">Light Off</button>
+		<button id="dright">Set Brightness</button>
+        
+		
+		<!-- <input type="button" name="bck" class="bck" value="< Back" /> -->
+		<button id="back3" class="bck">< Back</button>
+		</div>
+	</div><!-- /content -->
+
+	<!-- 
+<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div>
+ --><!-- /footer -->
+</div><!-- /page -->
+
+
+</body>
